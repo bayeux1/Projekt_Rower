@@ -14,11 +14,13 @@ namespace DL.Services
         private BikeDbContext _context;
 
         private DbSet<Trasy> _tracks;
+        private DbSet<Oceny> _oceny;
 
         public AdminService()
         {
             _context = new BikeDbContext();
             _tracks = _context.Trasy;
+            _oceny = _context.Oceny;
         }
 
         public Oceny GetOceny(int id_oceny)
@@ -161,7 +163,6 @@ namespace DL.Services
         {
             Oceny o = new Oceny
             {
-                
                 id_oceny = ocena.id_oceny,
                 ocena = ocena.ocena,
                 id_uzytkownika = ocena.id_uzytkownika,
@@ -169,7 +170,7 @@ namespace DL.Services
                
             };
 
-            _context.Oceny.Add(o);
+            _oceny.Add(o);
             _context.SaveChanges();
         }
 

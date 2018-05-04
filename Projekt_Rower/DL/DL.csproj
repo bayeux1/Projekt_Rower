@@ -93,6 +93,10 @@
     <Compile Include="Migrations\Bike\201803241544210_initial1.Designer.cs">
       <DependentUpon>201803241544210_initial1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Bike\201805041428304_poprawka_oceny_float.cs" />
+    <Compile Include="Migrations\Bike\201805041428304_poprawka_oceny_float.Designer.cs">
+      <DependentUpon>201805041428304_poprawka_oceny_float.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Bike\Configuration.cs" />
     <Compile Include="Migrations\User\201803241602117_initial.cs" />
     <Compile Include="Migrations\User\201803241602117_initial.Designer.cs">
@@ -128,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\Bike\201803241544210_initial1.resx">
       <DependentUpon>201803241544210_initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Bike\201805041428304_poprawka_oceny_float.resx">
+      <DependentUpon>201805041428304_poprawka_oceny_float.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\User\201803241602117_initial.resx">
       <DependentUpon>201803241602117_initial.cs</DependentUpon>

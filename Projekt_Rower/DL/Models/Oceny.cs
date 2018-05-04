@@ -11,7 +11,7 @@ namespace DL.Models
     public class Oceny
     {   [Key]
         public int id_oceny { get; set; }
-        public int ocena { get; set; }
+        public float ocena { get; set; }
         public int id_trasy { get; set; }
         public int id_uzytkownika { get; set; }
     }

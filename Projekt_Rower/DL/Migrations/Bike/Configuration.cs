@@ -36,6 +36,38 @@ namespace DL.Migrations.Shop
             
             context.Uzytkownicy.AddOrUpdate(uzytkownicy);
 
+            Widoki[] widoki = new Widoki[]
+            {
+                new Widoki { id_widoku = 1, data_dodania = DateTime.Now, id_trasy = 1, komenatrz="Piêkny widok jeziora", rodzaj="Jezioro", wspolrzedne="52.55,21.55" },
+                new Widoki { id_widoku = 2, data_dodania = DateTime.Now, id_trasy = 2, komenatrz="Fajna rzeka", rodzaj="Rzeka", wspolrzedne="51.55,22.55" },
+            };
+
+            context.Widoki.AddOrUpdate(widoki);
+
+            Niebezpieczenstwa[] niebezpieczenstwa = new Niebezpieczenstwa[]
+            {
+                new Niebezpieczenstwa { id_niebezieczenstwa = 1, data_dodania = DateTime.Now, id_trasy = 1, komenatrz="Du¿a dziura", rodzaj="Dziura", wspolrzedne="52.55,21.55" },
+                new Niebezpieczenstwa { id_niebezieczenstwa = 2, data_dodania = DateTime.Now, id_trasy = 2, komenatrz="Utrudnienia w ruchu", rodzaj="Wypadek", wspolrzedne="51.55,22.55" },
+            };
+
+            context.Niebezpieczenstwa.AddOrUpdate(niebezpieczenstwa);
+
+            Trasa_Ulice[] trasa_ulice = new Trasa_Ulice[]
+            {
+                new Trasa_Ulice { id_trasa_ulice = 1, id_trasy = 1, wspolrzedne="52.55,21.55", data_trasy= DateTime.Now, nazwa_ulicy="Mickiewicza" },
+                new Trasa_Ulice { id_trasa_ulice = 2, id_trasy = 2, wspolrzedne="51.55,22.55", data_trasy= DateTime.Now, nazwa_ulicy="Zwierzyniecka" },
+            };
+
+            context.Trasa_ulice.AddOrUpdate(trasa_ulice);
+
+            Oceny[] oceny = new Oceny[]
+            {
+                new Oceny { id_oceny = 1, id_trasy = 1, id_uzytkownika=2, ocena=5.6f},
+                new Oceny { id_oceny = 2, id_trasy = 2, id_uzytkownika=1, ocena=7.2f },
+            };
+
+            context.Oceny.AddOrUpdate(oceny);
+
         }
     }
 }
