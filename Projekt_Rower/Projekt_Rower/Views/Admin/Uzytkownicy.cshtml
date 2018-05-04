@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DL.Models.Uzytkownicy>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.naziwsko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pesel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.haslo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numer_telefonu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.konto_premium)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.imie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.naziwsko)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pesel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.haslo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numer_telefonu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.konto_premium)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditUzytkownicy", new { id = item.id_uzytkownika }) |
+                @Html.ActionLink("Details", "DetailsUzytkownicy", new { id = item.id_uzytkownika }) |
+                @Html.ActionLink("Delete", "DeleteUzytkownicy", new { id = item.id_uzytkownika })
+            </td>
+        </tr>
+    }
+
+</table>

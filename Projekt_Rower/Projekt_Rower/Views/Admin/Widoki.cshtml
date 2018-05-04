@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DL.Models.Widoki>
+
+<p>
+    @Html.ActionLink("Create New", "AddWidoki")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.rodzaj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.komenatrz)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_dodania)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_trasy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wspolrzedne)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.rodzaj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.komenatrz)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_dodania)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_trasy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wspolrzedne)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditWidoki", new { id=item.id_widoku }) |
+            @Html.ActionLink("Details", "DetailsWidoki", new { id=item.id_widoku }) |
+            @Html.ActionLink("Delete", "DeleteWidoki", new { id=item.id_widoku })
+        </td>
+    </tr>
+}
+
+</table>

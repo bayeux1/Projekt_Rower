@@ -1,0 +1,84 @@
+﻿@model DL.Models.Trasy
+
+<div>
+    <h4>Trasy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.poczatek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.poczatek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.koniec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.koniec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.zdjecie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.zdjecie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.przyblizony_czas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.przyblizony_czas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_dodania)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_dodania)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.komenatrz)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.komenatrz)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_trasa_ulice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_trasa_ulice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.srednia_ocena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.srednia_ocena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_uzytkownika)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_uzytkownika)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditTrasy", new { id = Model.id_trasy }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

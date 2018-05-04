@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DL.Models.Oceny>
+
+<p>
+    @Html.ActionLink("Create New", "AddOceny")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ocena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_trasy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_uzytkownika)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ocena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_trasy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_uzytkownika)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditOceny", new { id=item.id_oceny }) |
+            @Html.ActionLink("Details", "DetailsOceny", new { id=item.id_oceny }) |
+            @Html.ActionLink("Delete", "DeleteOceny", new { id=item.id_oceny })
+        </td>
+    </tr>
+}
+
+</table>

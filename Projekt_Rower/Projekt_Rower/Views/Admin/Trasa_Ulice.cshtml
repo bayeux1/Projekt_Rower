@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DL.Models.Trasa_Ulice>
+
+<p>
+    @Html.ActionLink("Create New", "AddTrasa_Ulice")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_trasy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wspolrzedne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_trasy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nazwa_ulicy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_trasy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wspolrzedne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_trasy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nazwa_ulicy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditTrasa_Ulice", new { id=item.id_trasa_ulice }) |
+            @Html.ActionLink("Details", "DetailsTrasa_Ulice", new { id=item.id_trasa_ulice }) |
+            @Html.ActionLink("Delete", "DeleteTrasa_Ulice", new { id=item.id_trasa_ulice })
+        </td>
+    </tr>
+}
+
+</table>

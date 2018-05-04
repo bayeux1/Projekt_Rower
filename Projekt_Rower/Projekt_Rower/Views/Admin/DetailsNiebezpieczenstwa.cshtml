@@ -1,0 +1,52 @@
+﻿@model DL.Models.Niebezpieczenstwa
+
+<div>
+    <h4>Niebezpieczenstwa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.rodzaj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rodzaj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.komenatrz)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.komenatrz)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_dodania)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_dodania)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_trasy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_trasy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wspolrzedne)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wspolrzedne)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditNiebezpieczenstwa", new { id = Model.id_niebezieczenstwa }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
