@@ -194,9 +194,9 @@ namespace Projekt_Rower.Controllers
             return RedirectToAction("Index");
         }
         [HttpPost]
-        public ActionResult EditOceny(Oceny ocena)
+        public ActionResult EditOceny(Oceny oc)
         {
-            _adminService.EditOceny(ocena);
+            _adminService.EditOceny(oc);
             return RedirectToAction("Index");
         }
         [HttpPost]
@@ -387,9 +387,9 @@ namespace Projekt_Rower.Controllers
             return RedirectToAction("Index");
         }
         [HttpPost]
-        public ActionResult AddOceny(Oceny ocena)
+        public ActionResult AddOceny(Oceny oc)
         {
-            _adminService.AddOceny(ocena);
+            _adminService.AddOceny(oc);
 
             return RedirectToAction("Index");
         }

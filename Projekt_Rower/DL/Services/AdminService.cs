@@ -167,6 +167,7 @@ namespace DL.Services
                 ocena = ocena.ocena,
                 id_uzytkownika = ocena.id_uzytkownika,
                 id_trasy = ocena.id_trasy,
+                
                
             };
 
