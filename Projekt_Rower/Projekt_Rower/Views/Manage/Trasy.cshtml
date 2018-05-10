@@ -1,0 +1,71 @@
+﻿@model IEnumerable<DL.Models.Trasy>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.poczatek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.koniec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zdjecie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.przyblizony_czas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_dodania)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.komenatrz)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_trasa_ulice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.srednia_ocena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_uzytkownika)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.poczatek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.koniec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zdjecie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.przyblizony_czas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_dodania)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.komenatrz)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_trasa_ulice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.srednia_ocena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_uzytkownika)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "DetailsTrasa", new { id = item.id_trasy })
+        </td>
+    </tr>
+}
+
+</table>

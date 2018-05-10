@@ -448,3 +448,4 @@ C:\Users\Michal\Desktop\PZ_DOBRE\Projekt_Rower\Projekt_Rower\obj\Debug\Projekt_R
 C:\Users\Michal\Desktop\PZ_DOBRE\Projekt_Rower\Projekt_Rower\obj\Debug\Projekt_Rower.csproj.CopyComplete
 C:\Users\Michal\Desktop\PZ_DOBRE\Projekt_Rower\Projekt_Rower\obj\Debug\Projekt_Rower.dll
 C:\Users\Michal\Desktop\PZ_DOBRE\Projekt_Rower\Projekt_Rower\obj\Debug\Projekt_Rower.pdb
+C:\Users\Michal\Desktop\PZ\Projekt_Rower\Projekt_Rower\obj\Debug\Projekt_Rower.csproj.CopyComplete

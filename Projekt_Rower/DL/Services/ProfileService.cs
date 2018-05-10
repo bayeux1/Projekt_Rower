@@ -28,6 +28,15 @@ namespace DL.Services
 
             return data;
         }
+        public IEnumerable<Trasy> GetTrasy(string UserProfileId)
+        {
+            var query = from t in _context.Trasy
+                        where t.User.OwnerId.Equals(UserProfileId)
+                        select t;
+            var trasy = query.ToList();
+
+            return trasy;
+        }
 
         public Uzytkownicy GetUserData(string userId)
         {

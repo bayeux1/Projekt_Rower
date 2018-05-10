@@ -287,6 +287,8 @@
     <Content Include="Views\Admin\DeleteOceny.cshtml" />
     <Content Include="Views\Admin\DeleteTrasa_Ulice.cshtml" />
     <Content Include="Views\Admin\AddOceny.cshtml" />
+    <Content Include="Views\Manage\Trasy.cshtml" />
+    <Content Include="Views\Manage\DetailsTrasa.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

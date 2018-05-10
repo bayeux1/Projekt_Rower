@@ -22,6 +22,22 @@ namespace Projekt_Rower.Controllers
         {
             _profileService = new ProfileService();
         }
+        [HttpGet]
+        public ActionResult GetTrasy()
+        {
+            var userId = User.Identity.GetUserId();
+            var trasy = _profileService.GetTrasy(userId);
+            return PartialView(@"~/Views/Manage/Trasy.cshtml", trasy);
+        }
+        [HttpGet]
+        public ActionResult DetailsTrasa(int id)
+        {
+            var userId = User.Identity.GetUserId();
+            var trasy = _profileService.GetTrasy(userId);
+            ViewBag.Trasa = trasy.FirstOrDefault(i => i.id_trasy == id);
+            return View();
+        }
+
 
         [HttpGet]
         public ActionResult GetData()

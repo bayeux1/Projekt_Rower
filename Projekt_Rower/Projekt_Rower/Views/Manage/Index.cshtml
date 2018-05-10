@@ -1,4 +1,5 @@
 ﻿@model Projekt_Rower.Models.IndexViewModel
+
 @{
     ViewBag.Title = "Zarządzaj";
 }
@@ -85,5 +86,7 @@
         </dd>
         <dt>User Data:</dt>
         @Html.Action("GetData", "Manage")
+        <dt>Trasy:</dt>
+        @Html.Action("GetTrasy", "Manage")
     </dl>
 </div>

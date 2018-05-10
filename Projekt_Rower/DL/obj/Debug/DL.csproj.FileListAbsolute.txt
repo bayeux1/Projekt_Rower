@@ -336,3 +336,5 @@ C:\Users\Michal\Desktop\PZ_DOBRE\Projekt_Rower\DL\obj\Debug\DL.csproj.CopyComple
 C:\Users\Michal\Desktop\PZ_DOBRE\Projekt_Rower\DL\obj\Debug\DL.dll
 C:\Users\Michal\Desktop\PZ_DOBRE\Projekt_Rower\DL\obj\Debug\DL.pdb
 C:\Users\Michal\Desktop\PZ_DOBRE\Projekt_Rower\DL\obj\Debug\DL.Migrations.Shop.poprawka_oceny_float.resources
+C:\Users\Michal\Desktop\PZ\Projekt_Rower\DL\obj\Debug\DL.Migrations.Shop.poprawka_oceny_float.resources
+C:\Users\Michal\Desktop\PZ\Projekt_Rower\DL\obj\Debug\DL.csproj.CopyComplete

@@ -1,0 +1,66 @@
+﻿@model DL.Models.Trasy
+<h4>Szczegóły trasy</h4>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<input type="hidden" id="poczatek" data-value="@ViewBag.Trasa.poczatek" />
+<input type="hidden" id="koniec" data-value="@ViewBag.Trasa.koniec" />
+<div id="map"></div>
+<div id="right-panel">
+    <p>Total Distance: <span id="total"></span></p>
+</div>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0_EAo2w5HUxC9V74ho_MMlRBJSBvvLo0&callback=initMap">
+</script>
+
+<script>
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: { lat: 53.133, lng: 23.146 }  // Białystok
+        });
+        var poczatek = $("#poczatek").data("value");
+        var koniec = $("#koniec").data("value");
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer({
+            draggable: true,
+            map: map,
+            panel: document.getElementById('right-panel')
+        });
+
+        directionsDisplay.addListener('directions_changed', function () {
+            computeTotalDistance(directionsDisplay.getDirections());
+        });
+
+        displayRoute(poczatek, koniec, directionsService,
+            directionsDisplay);
+    }
+
+    function displayRoute(origin, destination, service, display) {
+        service.route({
+            origin: origin,
+            destination: destination,
+            //waypoints: [{ location: 'Nowe Miasto, Białystok' }, { location: 'Wygoda, Białystok' }],
+            travelMode: 'BICYCLING',
+            avoidTolls: true
+        }, function (response, status) {
+            if (status === 'OK') {
+                display.setDirections(response);
+            } else {
+                alert('Could not display directions due to: ' + status);
+            }
+        });
+    }
+
+    function computeTotalDistance(result) {
+        var total = 0;
+        var myroute = result.routes[0];
+        for (var i = 0; i < myroute.legs.length; i++) {
+            total += myroute.legs[i].distance.value;
+        }
+        total = total / 1000;
+        document.getElementById('total').innerHTML = total + ' km';
+    }
+</script>
