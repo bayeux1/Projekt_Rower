@@ -9,6 +9,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Projekt_Rower.Models;
+using DL.Models;
+using DL.Services;
+using DL;
 
 namespace Projekt_Rower.Controllers
 {
@@ -151,19 +154,26 @@ namespace Projekt_Rower.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new Models.ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // Aby uzyskać więcej informacji o sposobie włączania potwierdzania konta i resetowaniu hasła, odwiedź stronę https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Wyślij wiadomość e-mail z tym łączem
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Potwierdź konto", "Potwierdź konto, klikając <a href=\"" + callbackUrl + "\">tutaj</a>");
+                    await this.UserManager.AddToRoleAsync(user.Id, "customer");
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                    return RedirectToAction("Index", "Admin");
+                    BikeDbContext bike = new BikeDbContext();
+                    Uzytkownicy profile = new Uzytkownicy()
+                    {
+                        OwnerId = user.Id,
+                        email = model.Email,
+                        konto_premium = DateTime.Now
+                    };
+                    bike.Uzytkownicy.Add(profile);
+
+
+                    bike.SaveChanges();
+
+                    return RedirectToAction("Index", "Manage");
                 }
                 AddErrors(result);
             }
@@ -367,7 +377,7 @@ namespace Projekt_Rower.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new Models.ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

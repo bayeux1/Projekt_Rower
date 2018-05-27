@@ -289,6 +289,7 @@
     <Content Include="Views\Admin\AddOceny.cshtml" />
     <Content Include="Views\Manage\Trasy.cshtml" />
     <Content Include="Views\Manage\DetailsTrasa.cshtml" />
+    <Content Include="Views\Manage\AddTrasy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,6 +1,9 @@
 ﻿@model IEnumerable<DL.Models.Trasy>
 
-
+<td>
+    @Html.ActionLink("Create New", "AddTrasy")
+</td>
+<br/>
 <table class="table">
     <tr>
         <th>
@@ -33,39 +36,40 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.poczatek)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.koniec)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.zdjecie)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.przyblizony_czas)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.data_dodania)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.komenatrz)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_trasa_ulice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.srednia_ocena)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_uzytkownika)
-        </td>
-        <td>
-            @Html.ActionLink("Details", "DetailsTrasa", new { id = item.id_trasy })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.poczatek)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.koniec)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.zdjecie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.przyblizony_czas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_dodania)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.komenatrz)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_trasa_ulice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.srednia_ocena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_uzytkownika)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "DetailsTrasa", new { id = item.id_trasy })
+            </td>
+        </tr>
+    }
 
 </table>

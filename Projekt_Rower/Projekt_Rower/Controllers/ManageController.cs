@@ -22,6 +22,22 @@ namespace Projekt_Rower.Controllers
         {
             _profileService = new ProfileService();
         }
+        public ActionResult AddTrasy()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddTrasy(Trasy track)
+        {
+            var userId = User.Identity.GetUserId();
+            var user = _profileService.GetUserId(userId);
+            var uzytkownik = user.FirstOrDefault();
+            int userIdInt = uzytkownik.id_uzytkownika;
+            _profileService.AddTrack(track, userIdInt);
+
+            return RedirectToAction("Index");
+        }
         [HttpGet]
         public ActionResult GetTrasy()
         {

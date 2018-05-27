@@ -19,6 +19,25 @@ namespace DL.Services
             _context = new BikeDbContext();
             _userdata = _context.Uzytkownicy;
         }
+        public void AddTrack(Trasy trasa,int userId)
+        {
+            Trasy t = new Trasy
+            {
+                data_dodania = DateTime.Now,
+                poczatek = trasa.poczatek,
+                koniec = trasa.koniec,
+                komenatrz = trasa.komenatrz,
+                srednia_ocena = trasa.srednia_ocena,
+                przyblizony_czas = trasa.przyblizony_czas,
+                zdjecie = trasa.zdjecie,
+                id_trasa_ulice = trasa.id_trasa_ulice,
+                id_trasy = trasa.id_trasy,
+                id_uzytkownika = userId,
+            };
+
+            _context.Trasy.Add(t);
+            _context.SaveChanges();
+        }
         public IEnumerable<Uzytkownicy> GetData(string UserProfileId)
         {
             var query = from u in _userdata
@@ -38,6 +57,15 @@ namespace DL.Services
             return trasy;
         }
 
+        public IEnumerable<Uzytkownicy> GetUserId(string UserProfileId)
+        {
+            var query = from u in _context.Uzytkownicy
+                        where u.OwnerId.Equals(UserProfileId)
+                        select u;
+            var user = query.ToList();
+
+            return user;
+        }
         public Uzytkownicy GetUserData(string userId)
         {
             Uzytkownicy user = _userdata.Where(u => u.OwnerId.Equals(userId)).FirstOrDefault();
